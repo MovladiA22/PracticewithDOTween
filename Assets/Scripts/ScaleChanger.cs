@@ -1,15 +1,12 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class ScaleChanger : MonoBehaviour
+public class ScaleChanger : DOTweenChanger
 {
     [SerializeField] private Vector3 _scale;
-    [SerializeField] private float _duration;
-    [SerializeField] private int _repeat;
-    [SerializeField] private LoopType _loopType;
 
     private void Start()
     {
-        transform.DOScale(_scale, _duration).SetLoops(_repeat, _loopType);
+        Repeat(transform.DOScale(_scale, _duration));
     }
 }
